@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 st.title('_2023_ 年度:blue[股基]市场交易量数据（单位：/万元）:sunglasses:')
 st.header('', divider='rainbow')
 # 读取Excel文件
-df = pd.read_excel(r'D:/Work/BI_Report/scripy_market_valume/市场交易量.xlsx')
+df = pd.read_excel(r'市场交易量.xlsx')
 
 # 将日期列转换为日期时间格式并截断时间部分
 df['交易日期'] = pd.to_datetime(df['交易日期']).dt.date
