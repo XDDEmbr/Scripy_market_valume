@@ -2,7 +2,7 @@ name: Weekday Crawler
 
 on:
   schedule:
-    - cron: '30 14 * * 1-5'
+    - cron: '0 8 * * 1-5'
 
 env:
   TZ: Asia/Shanghai
