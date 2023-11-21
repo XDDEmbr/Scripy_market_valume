@@ -14,9 +14,17 @@ jobs:
         uses: actions/checkout@v4.1.1
 
       - name: Set up Python
-        uses: actions/setup-python@v4.7.1
+        uses: actions/setup-python@v2
         with:
           python-version: 3.11.4
 
+      - name: Install dependencies
+        run: |
+          pip install requests
+          pip install openpyxl
+          pip install pandas
+          pip install chinese-calendar
+
       - name: Run crawler
         run: python get_market_valume.py
+
