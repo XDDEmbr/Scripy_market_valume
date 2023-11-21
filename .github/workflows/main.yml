@@ -1,0 +1,24 @@
+name: Weekday Crawler
+
+on:
+  schedule:
+    - cron: '0 9 * * 1-5'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  run_crawler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.4
+
+      - name: Run crawler
+        run: python get_market_valume.py
