@@ -43,20 +43,23 @@ jobs:
       
       - name: Clean up working directory
         run: rm 市场交易量.xlsx
-        
+      
       - name: Set up Git
         run: |
           git config --local user.email "XDDEmbrace@163.com"
           git config --local user.name "XDDEmbr"
-
+      
+      - name: Pull latest changes
+        run: git pull origin main
+      
       - name: Add updated file
         run: |
           git add 市场交易量.xlsx
-          git commit -a -m "Update market volume file"
-
+          git commit -m "Update market volume file"
+      
       - name: Push changes
         uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.main }}
+          branch: ${{ github.ref }}
 
