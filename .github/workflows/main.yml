@@ -31,9 +31,7 @@ jobs:
       - name: Run crawler
         run: python get_market_valume.py
              echo "Spider execution and Excel update completed"
-      - name: List files 
-        run: | 
-          dir -a
+
       - name: Change file permissions
         run: chmod 777 '市场交易量.xlsx'
 
@@ -46,17 +44,8 @@ jobs:
       - name: Clean up working directory
         run: rm 市场交易量.xlsx
         
-      - name: Set up Git
-        run: |
-          git config user.email "XDDEmbrace@163.com"
-          git config user.name "XDDEmbr"
+      - name: List files 
+        run: | 
+          dir -a        
 
-      - name: Add updated file
-        run: |
-          git add 市场交易量.xlsx
-          git commit -m "Update market volume file"
 
-      #- name: Push changes
-       ## uses: ad-m/github-push-action@v0.8.0
-       ## with:
-#github_token: ${{ secrets.SCRIPY_SECRET }}
