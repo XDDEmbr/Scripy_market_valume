@@ -41,4 +41,4 @@ jobs:
       - name: Replace market_valume file
         run: |
           rm 市场交易量.xlsx
-          cp 市场交易量.xlsx 市场交易量.xlsx
+          cp 市场交易量.xlsx /home/runner/work/Scripy_market_valume/Scripy_market_valume/市场交易量.xlsx
