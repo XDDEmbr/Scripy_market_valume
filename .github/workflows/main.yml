@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Change working directory to repository root
-        run: |
-          cd  $GITHUB_WORKSPACE
-          ls
-
       - name: Checkout code
         uses: actions/checkout@v4.1.1
         
@@ -36,9 +31,9 @@ jobs:
       - name: Run crawler
         run: python get_market_valume.py
              echo "Spider execution and Excel update completed"
-
-      - name: Change file permissions
-        run: chmod 777 '市场交易量.xlsx'
+      - name: List files 
+        run: | 
+          dir -a
 
       - name: Archive updated Excel file
         uses: actions/upload-artifact@v3.1.3
@@ -46,11 +41,22 @@ jobs:
           name: updated_excel
           path: 市场交易量.xlsx 
       
-     # - name: Clean up working directory
-      #  run: rm 市场交易量.xlsx
+      - name: Clean up working directory
+        run: rm 市场交易量.xlsx
         
-      - name: List files 
-        run: | 
-          dir -a        
+      - name: Set up Git
+        run: |
+          git config --local user.email "XDDEmbrace@163.com"
+          git config --local user.name "XDDEmbr"
 
+      - name: Add updated file
+        run: |
+          git add 市场交易量.xlsx
+          git commit -a -m "Update market volume file"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.main }}
 
