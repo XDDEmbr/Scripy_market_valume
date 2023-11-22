@@ -36,7 +36,7 @@ jobs:
           path: 市场交易量.xlsx 
       - name: Download updated Excel file
         run: |
-          wget ${{ steps.archive_updated_excel.outputs.artifacts_url }}/updated_excel/市场交易量.xlsx -O updated_file.xlsx  # 下载工件中的更新后的文件
+          curl -o updated_file.xlsx -L ${{ steps.archive_updated_excel.outputs.artifacts_url }}/updated_excel/市场交易量.xlsx  # 下载工件中的更新后的文件
 
       - name: Replace original Excel file
         run: |
