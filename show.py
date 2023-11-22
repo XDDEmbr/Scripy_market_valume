@@ -34,7 +34,7 @@ pct_chunks = [monthly_pct_change[i:i+4] for i in range(0, len(monthly_pct_change
 # 每个数据块展示在同一行
 for chunk, pct_chunk in zip(chunks, pct_chunks):
     cols = st.columns(4)
-    for i, vol in chunk.iteritems():
+    for i, vol in chunk.items():
         col_idx = i.month % 4 - 1
         if col_idx == -1:
             col_idx = 3
