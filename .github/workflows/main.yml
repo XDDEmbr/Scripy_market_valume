@@ -12,12 +12,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
-
-      - name: Set up the working directory
-        run: |
-          mkdir Scripy_market_value
-        working-directory: .Scripy_market_value
-
+        
+      - name: Get workspace path
+        run: echo "The workspace path is $GITHUB_WORKSPACE"  
+        
       - name: Set up Python
         uses: actions/setup-python@v4.7.1
         with:
@@ -39,7 +37,7 @@ jobs:
         with:
           name: updated_excel
           path: 市场交易量.xlsx 
-
+        
       - name: Replace market_valume file
         run: |
           rm 市场交易量.xlsx
