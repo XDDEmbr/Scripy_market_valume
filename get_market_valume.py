@@ -26,7 +26,7 @@ else:
 
  # 补充某一天的交易量数据
 from datetime import datetime
-trade_date_str = '2023-11-17'
+trade_date_str = '2023-11-16'
 trade_date = datetime.strptime(trade_date_str, '%Y-%m-%d').date() 
 
 
