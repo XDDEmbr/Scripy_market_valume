@@ -40,5 +40,15 @@ jobs:
         with:
           name: updated_excel
           path: /home/runner/work/Scripy_market_valume/Scripy_market_valume/市场交易量.xlsx 
+
+      - name: Replace Excel file
+        run: |
+          cp /home/runner/work/Scripy_market_valume/Scripy_market_valume/市场交易量.xlsx  $GITHUB_WORKSPACE/市场交易量.xlsx
         
-    
+      - name: Add updated file
+        run: |
+          git add $GITHUB_WORKSPACE/市场交易量.xlsx
+      - name: Push changes
+        uses: ad-m/github-push-action@v0.8.0
+        with:
+           github_token: ${{ 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 }}
