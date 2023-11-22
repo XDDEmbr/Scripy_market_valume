@@ -39,11 +39,11 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: updated_excel
-          path: /home/runner/work/Scripy_market_valume/Scripy_market_valume/市场交易量.xlsx 
+          path: 市场交易量.xlsx 
 
       - name: Replace Excel file
         run: |
-          cp /home/runner/work/Scripy_market_valume/Scripy_market_valume/市场交易量.xlsx  $GITHUB_WORKSPACE/市场交易量.xlsx
+          cp 市场交易量.xlsx  $GITHUB_WORKSPACE/市场交易量.xlsx
         
       - name: Add updated file
         run: |
