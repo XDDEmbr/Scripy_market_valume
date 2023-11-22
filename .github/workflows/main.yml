@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Change working directory to repository root
+        run: |
+          cd Scripy_market_valume/Scripy_market_valume
+          ls
+
       - name: Checkout code
         uses: actions/checkout@v4.1.1
         
@@ -41,8 +46,8 @@ jobs:
           name: updated_excel
           path: 市场交易量.xlsx 
       
-      - name: Clean up working directory
-        run: rm 市场交易量.xlsx
+     # - name: Clean up working directory
+      #  run: rm 市场交易量.xlsx
         
       - name: List files 
         run: | 
