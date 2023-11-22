@@ -27,11 +27,5 @@ jobs:
 
       - name: Run crawler
         run: python get_market_valume.py
-             echo "Spider execution and Excel update completed"
-
-      - name: Archive updated Excel file
-        uses: actions/upload-artifact@v3.1.3
-        with:
-          name: updated_excel
-          path: 市场交易量.xlsx 
+             mv 市场交易量.xlsx 市场交易量.xlsx
 
