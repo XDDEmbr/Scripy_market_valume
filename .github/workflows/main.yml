@@ -33,9 +33,9 @@ jobs:
         uses: actions/upload-artifact@v3.1.3
         with:
           name: updated_excel
-          path: 市场交易量new.xlsx 
+          path: 市场交易量.xlsx 
 
       - name: Replace market_valume file
         run: |
           rm 市场交易量.xlsx
-          cp 市场交易量new.xlsx 市场交易量.xlsx
+          cp 市场交易量.xlsx 市场交易量.xlsx
