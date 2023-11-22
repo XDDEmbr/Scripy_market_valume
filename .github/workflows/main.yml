@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Change working directory to repository root
         run: |
-          cd Scripy_market_valume
+          cd  $GITHUB_WORKSPACE
           ls
 
       - name: Checkout code
