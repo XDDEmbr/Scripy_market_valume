@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Change working directory to repository root
         run: |
-          cd Scripy_market_valume/Scripy_market_valume
+          cd Scripy_market_valume
           ls
 
       - name: Checkout code
