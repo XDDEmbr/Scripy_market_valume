@@ -31,6 +31,9 @@ jobs:
       - name: Run crawler
         run: python get_market_valume.py
              echo "Spider execution and Excel update completed"
+      - name: List files 
+        run: | 
+          dir -a
 
       - name: Archive updated Excel file
         uses: actions/upload-artifact@v3.1.3
