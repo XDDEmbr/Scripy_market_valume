@@ -45,7 +45,12 @@ jobs:
       
       - name: Clean up working directory
         run: rm 市场交易量.xlsx
-      
+        
+      - name: Set up Git
+        run: |
+          git config user.email "XDDEmbrace@163.com"
+          git config user.name "XDDEmbr"
+
       - name: Add updated file
         run: |
           git add 市场交易量.xlsx
