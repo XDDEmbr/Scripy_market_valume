@@ -9,6 +9,7 @@ from openpyxl.styles import Alignment
 from openpyxl.utils.dataframe import dataframe_to_rows
 
 # 获取上一个交易日
+"""
 def get_previous_trading_day(date):
     previous_day = date - datetime.timedelta(days=1)
     while not cal.is_workday(previous_day) or previous_day.weekday() in [5, 6]:
@@ -20,12 +21,12 @@ previous_day = get_previous_trading_day(current_date)
 if cal.is_workday(previous_day) and previous_day.weekday() not in [5, 6]:
     trade_date = previous_day
 else:
-    trade_date = get_previous_trading_day(previous_day)
+    trade_date = get_previous_trading_day(previous_day)"""
 
 
-""" # 补充某一天的交易量数据
+ # 补充某一天的交易量数据
 from datetime import datetime
-trade_date_str = '2023-11-09'
+trade_date_str = '2023-11-20'
 trade_date = datetime.strptime(trade_date_str, '%Y-%m-%d').date() """
 
 
