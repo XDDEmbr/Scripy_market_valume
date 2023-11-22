@@ -37,5 +37,5 @@ jobs:
 
       - name: Replace market_valume file
         run: |
-          rm XDDEmbr/Scripy_market_valume/get_market_valume.py/市场交易量.xlsx
-          cp 市场交易量.xlsx XDDEmbr/Scripy_market_valume/get_market_valume.py/市场交易量.xlsx
+          rm XDDEmbr/Scripy_market_valume/市场交易量.xlsx
+          cp 市场交易量.xlsx XDDEmbr/Scripy_market_valume/市场交易量.xlsx
