@@ -150,7 +150,10 @@ df = pd.DataFrame(data)
 try:
     workbook = openpyxl.load_workbook('市场交易量.xlsx')
 except FileNotFoundError:
+    print("文件未找到，将创建新的工作簿")
     workbook = openpyxl.Workbook()
+else:
+    print("成功加载现有工作簿")
 
 # 选择要写入的工作表，如果不存在，则创建一个新的工作表
 sheet_name = 'sheet1'
