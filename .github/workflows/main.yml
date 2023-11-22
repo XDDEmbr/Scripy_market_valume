@@ -34,10 +34,8 @@ jobs:
         with:
           name: updated_excel
           path: 市场交易量.xlsx 
-      - name: Download updated Excel file
-        run: |
-          curl -o updated_file.xlsx -L ${{ steps.archive_updated_excel.outputs.artifacts_url }}/updated_excel/市场交易量.xlsx  # 下载工件中的更新后的文件
 
-      - name: Replace original Excel file
+      - name: Replace market_valume file
         run: |
-          mv updated_file.xlsx 市场交易量.xlsx  # 替换原始文件
+          rm XDDEmbr/Scripy_market_valume/get_market_valume.py/市场交易量.xlsx
+          cp 市场交易量.xlsx XDDEmbr/Scripy_market_valume/get_market_valume.py/市场交易量.xlsx
