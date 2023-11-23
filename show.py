@@ -12,7 +12,7 @@ df = pd.read_excel(r'市场交易量.xlsx')
 # 将日期列转换为日期时间格式并截断时间部分
 df['交易日期'] = pd.to_datetime(df['交易日期']).dt.date
 
-st.checkbox("Use container width", value=False, key="use_container_width")
+st.checkbox("Use container width", value=True, key="use_container_width")
 
 # 在Streamlit应用程序中展示数据
 st.dataframe(df,use_container_width=st.session_state.use_container_width)
