@@ -9,7 +9,7 @@ from openpyxl.styles import Alignment
 from openpyxl.utils.dataframe import dataframe_to_rows
 
 # 获取上一个交易日
-"""
+
 def get_previous_trading_day(date):
     previous_day = date - datetime.timedelta(days=1)
     while not cal.is_workday(previous_day) or previous_day.weekday() in [5, 6]:
@@ -21,14 +21,15 @@ previous_day = get_previous_trading_day(current_date)
 if cal.is_workday(previous_day) and previous_day.weekday() not in [5, 6]:
     trade_date = previous_day
 else:
-    trade_date = get_previous_trading_day(previous_day)"""
+    trade_date = get_previous_trading_day(previous_day)
 
 
  # 补充某一天的交易量数据
+'''
 from datetime import datetime
 trade_date_str = '2023-11-15'
 trade_date = datetime.strptime(trade_date_str, '%Y-%m-%d').date() 
-
+'''
 
 # 获取上交所交易量
 Cookie = "ba17301551dcbaf9_gdp_user_key=; gdp_user_id=gioenc-c1785dd3%2Cb695%2C51cg%2C84gg%2C8e7b7b4b9g6b; ba17301551dcbaf9_gdp_session_id_3df712f8-0c77-4c37-bd5f-d89df676be39=true; ba17301551dcbaf9_gdp_session_id_7a21bda2-5089-44d9-add4-c88e9dbb143d=true; ba17301551dcbaf9_gdp_session_id_add47fce-aded-4899-a646-004dc0b42989=true; ba17301551dcbaf9_gdp_session_id_774dd4fd-d40b-4566-bdaf-97ec7d087cfc=true; ba17301551dcbaf9_gdp_session_id_e61de0fe-cdac-4c6e-b5ba-a1e69bc19faf=true; ba17301551dcbaf9_gdp_session_id=692ed08a-e5a6-4cff-93b8-b48059a48974; ba17301551dcbaf9_gdp_session_id_692ed08a-e5a6-4cff-93b8-b48059a48974=true; ba17301551dcbaf9_gdp_sequence_ids={%22globalKey%22:122%2C%22VISIT%22:7%2C%22PAGE%22:35%2C%22VIEW_CLICK%22:70%2C%22CUSTOM%22:12%2C%22VIEW_CHANGE%22:2}"
