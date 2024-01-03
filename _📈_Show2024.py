@@ -3,6 +3,11 @@ import streamlit as st
 
 # 设置应用程序为宽屏模式
 st.set_page_config(layout="wide")
+# 创建一个空的侧边栏
+sidebar = st.sidebar.empty()
+
+# 网页加载时不显示侧边栏选框
+sidebar.empty()
 
 st.title('_2024_ 年度:blue[股基]市场交易量数据（单位：/万元）:sunglasses:')
 st.header('', divider='rainbow')
