@@ -38,7 +38,8 @@ def get_chart(data):
             # 设置工具提示，显示日期和价格信息
             tooltip=[
                 alt.Tooltip("交易日期", title="日期"),
-                alt.Tooltip("交易量", title="交易量"),
+                alt.Tooltip("类别", title="类别"),
+                alt.Tooltip("交易量", title="交易量")
             ],
         )
         .add_selection(hover)  # 将悬停选择器添加到辅助线图表中
