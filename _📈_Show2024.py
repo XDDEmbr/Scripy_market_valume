@@ -17,7 +17,7 @@ df = pd.read_excel(r'2024年度市场交易量.xlsx')
 
 # 将日期列转换为日期时间格式并截断时间部分
 df['交易日期'] = pd.to_datetime(df['交易日期']).dt.date
-
+data=df
 st.checkbox("Use container width", value=True, key="use_container_width")
 
 # 在Streamlit应用程序中展示数据
@@ -53,5 +53,5 @@ st.subheader('2024年度每日股基交易量变动情况')
 # 展示每天的市场交易量数据
 st.line_chart(df['合计'])
 
-chart = chart.get_chart(df)
+chart = chart.get_chart(data)
 st.altair_chart(chart, use_container_width=True)
