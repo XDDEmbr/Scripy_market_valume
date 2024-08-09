@@ -11,6 +11,12 @@ df = pd.read_excel(r'2023年度市场交易量.xlsx')
 
 # 将日期列转换为日期时间格式并截断时间部分
 df['交易日期'] = pd.to_datetime(df['交易日期']).dt.date
+melted_df = df.melt(id_vars=['交易日期'], 
+                    value_vars=['上交所（股票）', '上交所（基金）', 
+                                '深交所（股票）', '深交所（基金）', 
+                                '北交所（股票）'],
+                    var_name='类别', value_name='交易量')
+melted_df = melted_df.sort_values(by='交易日期')
 
 st.checkbox("Use container width", value=True, key="use_container_width")
 
@@ -43,6 +49,11 @@ for chunk, pct_chunk in zip(chunks, pct_chunks):
         coli.metric(f"{i.month}月交易量", f"{vol:.2f}", f"{pct_change:.2f}%")
 
 st.write("\n\n\n")
-st.subheader('2023年度每日股基交易量变动情况')
+st.subheader('2023年度每日明细股基交易量变动情况')
+chart = chart.get_chart(melted_df)
+st.altair_chart(chart, use_container_width=True)
+
+st.write("\n\n\n")
+st.subheader('2023年度每日合计股基交易量变动情况')
 # 展示每天的市场交易量数据
 st.line_chart(df['合计'])
