@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+from utils import chart
 
 # 设置应用程序为宽屏模式
 st.set_page_config(layout="wide")
@@ -51,3 +52,6 @@ st.write("\n\n\n")
 st.subheader('2024年度每日股基交易量变动情况')
 # 展示每天的市场交易量数据
 st.line_chart(df['合计'])
+
+chart = chart.get_chart(df)
+st.altair_chart(chart, use_container_width=True)
