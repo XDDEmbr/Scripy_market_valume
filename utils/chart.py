@@ -13,11 +13,13 @@ def get_chart(data):
 
     # 创建一个基础的折线图，用于展示数据
     lines = (
-        alt.Chart(data, title="2024年度每日股基交易量变动情况")  # 创建图表，设置标题
+        alt.Chart(data)  # 创建图表，设置标题
         .mark_line()  # 使用线条标记来绘制折线图
         .encode(
             x="交易日期",  # 指定x轴的字段为日期
-            y="合计" # 指定y轴的字段为交易量
+            y="交易量", # 指定y轴的字段为交易量
+            color="类别",
+            strokeDash="类别"
         )
     )
 
@@ -30,13 +32,13 @@ def get_chart(data):
         .mark_rule()  # 使用标记规则来绘制垂直线
         .encode(
             x="交易日期", 
-            y="合计",  
+            y="交易量",  
             # 根据悬停选择器的条件设置透明度，未悬停时透明度为0
             opacity=alt.condition(hover, alt.value(0.3), alt.value(0)),
             # 设置工具提示，显示日期和价格信息
             tooltip=[
                 alt.Tooltip("交易日期", title="日期"),
-                alt.Tooltip("合计", title="合计交易量"),
+                alt.Tooltip("交易量", title="交易量"),
             ],
         )
         .add_selection(hover)  # 将悬停选择器添加到辅助线图表中
