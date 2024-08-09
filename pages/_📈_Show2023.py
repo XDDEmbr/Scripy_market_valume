@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+from utils import chart
 
 # 设置应用程序为宽屏模式
 st.set_page_config(layout="wide")
