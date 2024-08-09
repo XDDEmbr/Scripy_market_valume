@@ -3,3 +3,4 @@ pandas==1.5.3
 requests==2.31.0
 openpyxl==3.1.2
 chinese-calendar==1.9.0
+altair
