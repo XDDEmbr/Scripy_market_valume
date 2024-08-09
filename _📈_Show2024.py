@@ -54,11 +54,11 @@ for chunk, pct_chunk in zip(chunks, pct_chunks):
         coli.metric(f"{i.month}月交易量", f"{vol:.2f}", f"{pct_change:.2f}%")
 
 st.write("\n\n\n")
-st.subheader('2024年度每日合计股基交易量变动情况')
-# 展示每天的市场交易量数据
-st.line_chart(df['合计'])
-
-st.write("\n\n\n")
 st.subheader('2024年度每日明细股基交易量变动情况')
 chart = chart.get_chart(melted_df)
 st.altair_chart(chart, use_container_width=True)
+
+st.write("\n\n\n")
+st.subheader('2024年度每日合计股基交易量变动情况')
+# 展示每天的市场交易量数据
+st.line_chart(df['合计'])
